@@ -110,9 +110,16 @@ class _LoginPageState extends State<LoginPage> {
       EasyLoading.show(status: 'Please wait...');
 
       try {
-        await AuthService.loginAdmin(email, password);
-        Navigator.pushReplacementNamed(context, LauncherPage.routeName);
+        final isAdmin = await AuthService.loginAdmin(email, password);
         EasyLoading.dismiss();
+        if (isAdmin) {
+          Navigator.pushReplacementNamed(context, LauncherPage.routeName);
+        } else {
+          await AuthService.logout();
+          setState(() {
+            errMsg = 'You are not an admin. Please use a valid admin address!';
+          });
+        }
       } on FirebaseAuthException catch(error) {
         EasyLoading.dismiss();
         setState(() {
