@@ -1,5 +1,9 @@
+import 'package:ecom_admin/pages/dashboard_page.dart';
+import 'package:ecom_admin/pages/launcher_page.dart';
+import 'package:ecom_admin/pages/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'firebase_options.dart';
 
@@ -24,11 +28,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Hello'),
-        ),
-      ),
+      builder: EasyLoading.init(),
+      initialRoute: LauncherPage.routeName,
+      routes: {
+        LauncherPage.routeName : (context) => const LauncherPage(),
+        LoginPage.routeName : (context) => const LoginPage(),
+        DashboardPage.routeName : (context) => const DashboardPage(),
+      },
     );
   }
 }
