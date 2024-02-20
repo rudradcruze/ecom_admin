@@ -8,23 +8,20 @@ class DashboardItemView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: InkWell(
-        onTap: () {
-          Navigator.pushNamed(context, item.route);
-        },
-        child: Card(
-          surfaceTintColor: Colors.purple,
-          shadowColor: Colors.purple,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(item.iconData, size: 40, color: Colors.purple.shade300,),
-              const SizedBox(height: 10,),
-              Text(item.title, style: Theme.of(context).textTheme.titleLarge,),
-            ],
-          ),
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, item.route);
+      },
+      child: Card(
+        surfaceTintColor: Colors.purple,
+        shadowColor: Colors.purple,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(item.iconData, size: 40, color: Colors.purple.shade300,),
+            const SizedBox(height: 10,),
+            Text(item.title, style: Theme.of(context).textTheme.titleLarge,),
+          ],
         ),
       ),
     );
