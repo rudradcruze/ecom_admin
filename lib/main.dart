@@ -1,6 +1,9 @@
+import 'package:ecom_admin/pages/category_page.dart';
 import 'package:ecom_admin/pages/dashboard_page.dart';
 import 'package:ecom_admin/pages/launcher_page.dart';
 import 'package:ecom_admin/pages/login_page.dart';
+import 'package:ecom_admin/pages/new_product_page.dart';
+import 'package:ecom_admin/pages/view_product_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -34,6 +37,9 @@ class MyApp extends StatelessWidget {
         LauncherPage.routeName : (context) => const LauncherPage(),
         LoginPage.routeName : (context) => const LoginPage(),
         DashboardPage.routeName : (context) => const DashboardPage(),
+        NewProductPage.routeName : (context) => const NewProductPage(),
+        ViewProductPage.routeName : (context) => const ViewProductPage(),
+        CategoryPage.routeName : (context) => const CategoryPage(),
       },
     );
   }

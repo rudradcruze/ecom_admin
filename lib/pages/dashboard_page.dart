@@ -1,5 +1,7 @@
 import 'package:ecom_admin/auth/auth_service.dart';
+import 'package:ecom_admin/customer_widgets/dashboard_item_view.dart';
 import 'package:ecom_admin/pages/launcher_page.dart';
+import 'package:ecom_admin/models/dashboard_items.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -15,14 +17,25 @@ class DashboardPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              AuthService.logout().then((value) => Navigator.pushReplacementNamed(context, LauncherPage.routeName));
+              AuthService.logout().then((value) =>
+                  Navigator.pushReplacementNamed(
+                      context, LauncherPage.routeName));
             },
             icon: const Icon(Icons.logout),
           ),
         ],
       ),
-      body: Center(
-        child: Text('Dashboard'),
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        ),
+        itemCount: dashboardItemList.length,
+        itemBuilder: (context, index) {
+          final item = dashboardItemList[index];
+          return DashboardItemView(
+            item: item,
+          );
+        },
       ),
     );
   }
