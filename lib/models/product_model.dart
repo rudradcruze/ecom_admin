@@ -10,7 +10,7 @@ class ProductModel with _$ProductModel {
   factory ProductModel({
     String? productId,
     required String productName,
-    required CategoryModel categoryModel,
+    @CategoryModelConverter() required CategoryModel categoryModel,
     String? description,
     required String imageUrl,
     required num price,
@@ -20,6 +20,6 @@ class ProductModel with _$ProductModel {
     @Default(0.0) double avgRating,
   }) = _ProductModel;
 
-  factory ProductModel.fromJson(Map<String, dynamic?> json) =>
+  factory ProductModel.fromJson(Map<String, dynamic> json) =>
       _$ProductModelFromJson(json);
 }

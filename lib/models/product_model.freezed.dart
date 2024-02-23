@@ -24,7 +24,9 @@ mixin _$ProductModel {
   set productId(String? value) => throw _privateConstructorUsedError;
   String get productName => throw _privateConstructorUsedError;
   set productName(String value) => throw _privateConstructorUsedError;
+  @CategoryModelConverter()
   CategoryModel get categoryModel => throw _privateConstructorUsedError;
+  @CategoryModelConverter()
   set categoryModel(CategoryModel value) => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   set description(String? value) => throw _privateConstructorUsedError;
@@ -56,7 +58,7 @@ abstract class $ProductModelCopyWith<$Res> {
   $Res call(
       {String? productId,
       String productName,
-      CategoryModel categoryModel,
+      @CategoryModelConverter() CategoryModel categoryModel,
       String? description,
       String imageUrl,
       num price,
@@ -146,7 +148,7 @@ abstract class _$$ProductModelImplCopyWith<$Res>
   $Res call(
       {String? productId,
       String productName,
-      CategoryModel categoryModel,
+      @CategoryModelConverter() CategoryModel categoryModel,
       String? description,
       String imageUrl,
       num price,
@@ -226,10 +228,10 @@ class __$$ProductModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ProductModelImpl implements _ProductModel {
-   _$ProductModelImpl(
+  _$ProductModelImpl(
       {this.productId,
       required this.productName,
-      required this.categoryModel,
+      @CategoryModelConverter() required this.categoryModel,
       this.description,
       required this.imageUrl,
       required this.price,
@@ -246,6 +248,7 @@ class _$ProductModelImpl implements _ProductModel {
   @override
   String productName;
   @override
+  @CategoryModelConverter()
   CategoryModel categoryModel;
   @override
   String? description;
@@ -288,7 +291,7 @@ abstract class _ProductModel implements ProductModel {
   factory _ProductModel(
       {String? productId,
       required String productName,
-      required CategoryModel categoryModel,
+      @CategoryModelConverter() required CategoryModel categoryModel,
       String? description,
       required String imageUrl,
       required num price,
@@ -307,7 +310,9 @@ abstract class _ProductModel implements ProductModel {
   String get productName;
   set productName(String value);
   @override
+  @CategoryModelConverter()
   CategoryModel get categoryModel;
+  @CategoryModelConverter()
   set categoryModel(CategoryModel value);
   @override
   String? get description;
