@@ -21,6 +21,9 @@ class DbHelper {
   Stream<QuerySnapshot<Map<String, dynamic>>> getAllCategories() =>
       _db.collection(collectionCategory).orderBy('name').snapshots();
 
+  Stream<QuerySnapshot<Map<String, dynamic>>> getAllProducts() =>
+      _db.collection(collectionProduct).snapshots();
+
   Future<void> addProduct(ProductModel product) async {
     final doc = _db.collection(collectionProduct).doc();
     product.productId = doc.id;

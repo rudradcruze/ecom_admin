@@ -9,6 +9,7 @@ import '../models/category_model.dart';
 
 class ProductProvider extends ChangeNotifier {
   List<CategoryModel> categoryList = [];
+  List<ProductModel> productList = [];
   final _db = DbHelper();
 
   Future<void> addCategory(String name) async {
@@ -20,6 +21,14 @@ class ProductProvider extends ChangeNotifier {
     _db.getAllCategories().listen((snapshot) {
       categoryList = List.generate(snapshot.docs.length,
           (index) => CategoryModel.fromJson(snapshot.docs[index].data()));
+      notifyListeners();
+    });
+  }
+
+  void getAllProducts() {
+    _db.getAllProducts().listen((snapshot) {
+      productList = List.generate(snapshot.docs.length,
+          (index) => ProductModel.fromJson(snapshot.docs[index].data()));
       notifyListeners();
     });
   }
