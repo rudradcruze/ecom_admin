@@ -16,6 +16,7 @@ class OrderModel with _$OrderModel {
     required num vat,
     required num grantTotal,
     required String orderStatus,
+    required String streetAddress,
     required List<Map<String, dynamic>> orderDetails,
 }) = _OrderModel;
 

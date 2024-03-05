@@ -17,6 +17,7 @@ _$OrderModelImpl _$$OrderModelImplFromJson(Map<String, dynamic> json) =>
       vat: json['vat'] as num,
       grantTotal: json['grantTotal'] as num,
       orderStatus: json['orderStatus'] as String,
+      streetAddress: json['streetAddress'] as String,
       orderDetails: (json['orderDetails'] as List<dynamic>)
           .map((e) => e as Map<String, dynamic>)
           .toList(),
@@ -32,5 +33,6 @@ Map<String, dynamic> _$$OrderModelImplToJson(_$OrderModelImpl instance) =>
       'vat': instance.vat,
       'grantTotal': instance.grantTotal,
       'orderStatus': instance.orderStatus,
+      'streetAddress': instance.streetAddress,
       'orderDetails': instance.orderDetails,
     };

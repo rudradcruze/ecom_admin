@@ -3,7 +3,9 @@ import 'package:ecom_admin/customer_widgets/dashboard_item_view.dart';
 import 'package:ecom_admin/pages/launcher_page.dart';
 import 'package:ecom_admin/models/dashboard_items.dart';
 import 'package:ecom_admin/pages/order_deatils_page.dart';
+import 'package:ecom_admin/providers/order_provider.dart';
 import 'package:ecom_admin/providers/product_provider.dart';
+import 'package:ecom_admin/providers/user_provider.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -24,6 +26,9 @@ class _DashboardPageState extends State<DashboardPage> {
   void didChangeDependencies() {
     Provider.of<ProductProvider>(context, listen: false).getAllCategories();
     Provider.of<ProductProvider>(context, listen: false).getAllProducts();
+    Provider.of<OrderProvider>(context, listen: false).getAllOrders();
+    Provider.of<OrderProvider>(context, listen: false).getOrderConstant();
+    Provider.of<UserProvider>(context, listen: false).getAllUser();
     super.didChangeDependencies();
   }
 

@@ -38,6 +38,8 @@ mixin _$OrderModel {
   set grantTotal(num value) => throw _privateConstructorUsedError;
   String get orderStatus => throw _privateConstructorUsedError;
   set orderStatus(String value) => throw _privateConstructorUsedError;
+  String get streetAddress => throw _privateConstructorUsedError;
+  set streetAddress(String value) => throw _privateConstructorUsedError;
   List<Map<String, dynamic>> get orderDetails =>
       throw _privateConstructorUsedError;
   set orderDetails(List<Map<String, dynamic>> value) =>
@@ -64,6 +66,7 @@ abstract class $OrderModelCopyWith<$Res> {
       num vat,
       num grantTotal,
       String orderStatus,
+      String streetAddress,
       List<Map<String, dynamic>> orderDetails});
 }
 
@@ -88,6 +91,7 @@ class _$OrderModelCopyWithImpl<$Res, $Val extends OrderModel>
     Object? vat = null,
     Object? grantTotal = null,
     Object? orderStatus = null,
+    Object? streetAddress = null,
     Object? orderDetails = null,
   }) {
     return _then(_value.copyWith(
@@ -123,6 +127,10 @@ class _$OrderModelCopyWithImpl<$Res, $Val extends OrderModel>
           ? _value.orderStatus
           : orderStatus // ignore: cast_nullable_to_non_nullable
               as String,
+      streetAddress: null == streetAddress
+          ? _value.streetAddress
+          : streetAddress // ignore: cast_nullable_to_non_nullable
+              as String,
       orderDetails: null == orderDetails
           ? _value.orderDetails
           : orderDetails // ignore: cast_nullable_to_non_nullable
@@ -148,6 +156,7 @@ abstract class _$$OrderModelImplCopyWith<$Res>
       num vat,
       num grantTotal,
       String orderStatus,
+      String streetAddress,
       List<Map<String, dynamic>> orderDetails});
 }
 
@@ -170,6 +179,7 @@ class __$$OrderModelImplCopyWithImpl<$Res>
     Object? vat = null,
     Object? grantTotal = null,
     Object? orderStatus = null,
+    Object? streetAddress = null,
     Object? orderDetails = null,
   }) {
     return _then(_$OrderModelImpl(
@@ -205,6 +215,10 @@ class __$$OrderModelImplCopyWithImpl<$Res>
           ? _value.orderStatus
           : orderStatus // ignore: cast_nullable_to_non_nullable
               as String,
+      streetAddress: null == streetAddress
+          ? _value.streetAddress
+          : streetAddress // ignore: cast_nullable_to_non_nullable
+              as String,
       orderDetails: null == orderDetails
           ? _value.orderDetails
           : orderDetails // ignore: cast_nullable_to_non_nullable
@@ -225,6 +239,7 @@ class _$OrderModelImpl implements _OrderModel {
       required this.vat,
       required this.grantTotal,
       required this.orderStatus,
+      required this.streetAddress,
       required this.orderDetails});
 
   factory _$OrderModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -248,11 +263,13 @@ class _$OrderModelImpl implements _OrderModel {
   @override
   String orderStatus;
   @override
+  String streetAddress;
+  @override
   List<Map<String, dynamic>> orderDetails;
 
   @override
   String toString() {
-    return 'OrderModel(orderId: $orderId, uid: $uid, orderDate: $orderDate, deliveryCharge: $deliveryCharge, discount: $discount, vat: $vat, grantTotal: $grantTotal, orderStatus: $orderStatus, orderDetails: $orderDetails)';
+    return 'OrderModel(orderId: $orderId, uid: $uid, orderDate: $orderDate, deliveryCharge: $deliveryCharge, discount: $discount, vat: $vat, grantTotal: $grantTotal, orderStatus: $orderStatus, streetAddress: $streetAddress, orderDetails: $orderDetails)';
   }
 
   @JsonKey(ignore: true)
@@ -279,6 +296,7 @@ abstract class _OrderModel implements OrderModel {
       required num vat,
       required num grantTotal,
       required String orderStatus,
+      required String streetAddress,
       required List<Map<String, dynamic>> orderDetails}) = _$OrderModelImpl;
 
   factory _OrderModel.fromJson(Map<String, dynamic> json) =
@@ -310,6 +328,9 @@ abstract class _OrderModel implements OrderModel {
   @override
   String get orderStatus;
   set orderStatus(String value);
+  @override
+  String get streetAddress;
+  set streetAddress(String value);
   @override
   List<Map<String, dynamic>> get orderDetails;
   set orderDetails(List<Map<String, dynamic>> value);
