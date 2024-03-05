@@ -6,6 +6,7 @@ import 'package:ecom_admin/pages/new_product_page.dart';
 import 'package:ecom_admin/pages/order_deatils_page.dart';
 import 'package:ecom_admin/pages/view_order_page.dart';
 import 'package:ecom_admin/pages/view_product_page.dart';
+import 'package:ecom_admin/pages/view_user_page.dart';
 import 'package:ecom_admin/providers/cart_provider.dart';
 import 'package:ecom_admin/providers/order_provider.dart';
 import 'package:ecom_admin/providers/product_provider.dart';
@@ -65,6 +66,7 @@ class MyApp extends StatelessWidget {
         CategoryPage.routeName: (context) => const CategoryPage(),
         OrderDetailsPage.routeName: (context) => const OrderDetailsPage(),
         ViewOrderPage.routeName: (context) => const ViewOrderPage(),
+        ViewUserPage.routeName: (context) => const ViewUserPage(),
       },
     );
   }
