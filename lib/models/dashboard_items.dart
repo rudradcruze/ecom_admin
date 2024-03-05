@@ -19,4 +19,5 @@ final dashboardItemList = <DashboardItem>[
   DashboardItem(title: 'Add Product', route: NewProductPage.routeName, iconData: Icons.add),
   DashboardItem(title: 'View Products', route: ViewProductPage.routeName, iconData: Icons.card_giftcard),
   DashboardItem(title: 'Categories', route: CategoryPage.routeName, iconData: Icons.category),
+  DashboardItem(title: 'Orders', route: CategoryPage.routeName, iconData: Icons.document_scanner_rounded),
 ];
